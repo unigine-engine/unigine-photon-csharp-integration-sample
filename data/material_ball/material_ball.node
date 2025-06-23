@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.20.0.0">
+	<node type="ObjectMeshStatic" id="965938168" name="material_ball">
+		<mesh_name>guid://a3fbaa7a8db775f674c1b32e8e5e4dbfe7bafba5</mesh_name>
+		<surface name="material_ball_mat" intersection="1" material="2811a7f9b592b10430cd8893f1a474d6713c263d"/>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

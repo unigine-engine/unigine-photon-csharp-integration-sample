@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "main": {
+      "commandName": "Project",
+      "commandLineArgs": "-data_path ../",
+      "nativeDebugging": true
+    }
+  }
+}

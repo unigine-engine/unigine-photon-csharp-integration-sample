@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.20.0.0" name="GameManager" guid="6d7b166e41c003c9da8d447ba9e554d6f8618c9e" parent="657ecdbbfc83135a26777f86012da3587b67be0c" interfaces="Photon.Realtime.IInRoomCallbacks" editable="0"/>

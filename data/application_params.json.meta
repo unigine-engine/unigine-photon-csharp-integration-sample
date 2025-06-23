@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>efe4c93f1485ef8964bf8247346988c35a2e0482</guid>
+	<type>file</type>
+	<hash>6bb2750e</hash>
+	<runtimes>
+		<runtime id="efe4c93f1485ef8964bf8247346988c35a2e0482" name="application_params.json" link="0"/>
+	</runtimes>
+</asset>
