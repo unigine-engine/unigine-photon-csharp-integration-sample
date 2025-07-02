@@ -15,36 +15,60 @@
 		<WarningLevel>4</WarningLevel>
 		<OutputPath>bin</OutputPath>
 		<UseAppHost>true</UseAppHost>
-		<AppHostSourcePath Condition="&apos;$(OS)&apos; == &apos;Windows_NT&apos;">$(OutputPath)\dotnet_host_x64.exe</AppHostSourcePath>
+		<AppHostSourcePath Condition="'$(OS)' == 'Windows_NT'">$(OutputPath)\dotnet_host_x64.exe</AppHostSourcePath>
 		<EnableDefaultItems>false</EnableDefaultItems>
 		<SkipPostBuild>false</SkipPostBuild>
 		<Platforms>x64</Platforms>
 		<PlatformTarget>x64</PlatformTarget>
 		<DebugType>portable</DebugType>
 		<DOTNET_HOST_PATH Condition="'$(DOTNET_HOST_PATH)' == ''">dotnet</DOTNET_HOST_PATH>
+		<Configurations>Debug;Release;Debug-Double;Release-Double</Configurations>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)'=='Debug'">
 		<AssemblyName>unigine-photon-csharp-integration-sample_x64d</AssemblyName>
 		<DebugSymbols>true</DebugSymbols>
 		<Optimize>false</Optimize>
-		<DefineConstants>TRACE;DEBUG;UNIGINE_DOUBLE;</DefineConstants>
+		<DefineConstants>TRACE;DEBUG;</DefineConstants>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='Debug-Double'">
+	  <AssemblyName>unigine-photon-csharp-integration-sample_double_x64d</AssemblyName>
+	  <DebugSymbols>true</DebugSymbols>
+	  <Optimize>false</Optimize>
+	  <DefineConstants>TRACE;DEBUG;UNIGINE_DOUBLE;</DefineConstants>
 	</PropertyGroup>
 	<ItemGroup Condition="'$(Configuration)'=='Debug'">
-		<Reference Include="UnigineSharp_double_x64d">
+		<Reference Include="UnigineSharp_x64d">
 			<SpecificVersion>false</SpecificVersion>
-			<HintPath>bin\UnigineSharp_double_x64d.dll</HintPath>
+			<HintPath>bin\UnigineSharp_x64d.dll</HintPath>
 		</Reference>
+	</ItemGroup>
+	<ItemGroup Condition="'$(Configuration)'=='Debug-Double'">
+	  <Reference Include="UnigineSharp_double_x64d">
+	    <SpecificVersion>false</SpecificVersion>
+	    <HintPath>bin\UnigineSharp_double_x64d.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 	<PropertyGroup Condition="'$(Configuration)'=='Release'">
 		<AssemblyName>unigine-photon-csharp-integration-sample_x64</AssemblyName>
 		<Optimize>true</Optimize>
-		<DefineConstants>TRACE;NDEBUG;UNIGINE_DOUBLE;</DefineConstants>
+		<DefineConstants>TRACE;NDEBUG;</DefineConstants>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='Release-Double'">
+	  <AssemblyName>unigine-photon-csharp-integration-sample_double_x64</AssemblyName>
+	  <Optimize>true</Optimize>
+	  <DefineConstants>TRACE;NDEBUG;UNIGINE_DOUBLE;</DefineConstants>
 	</PropertyGroup>
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
-		<Reference Include="UnigineSharp_double_x64">
+		<Reference Include="UnigineSharp_x64">
 			<SpecificVersion>false</SpecificVersion>
-			<HintPath>bin\UnigineSharp_double_x64.dll</HintPath>
+			<HintPath>bin\UnigineSharp_x64.dll</HintPath>
 		</Reference>
+	</ItemGroup>
+	<ItemGroup Condition="'$(Configuration)'=='Release-Double'">
+	  <Reference Include="UnigineSharp_double_x64">
+	    <SpecificVersion>false</SpecificVersion>
+	    <HintPath>bin\UnigineSharp_double_x64.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
   <ItemGroup>
     <Compile Include="data\GameChat.cs" />
@@ -65,7 +89,9 @@
     <Compile Include="source\PhotonSDK\PhotonLoadbalancingApi\*.cs" />
   </ItemGroup>
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<Exec Command="&quot;$(DOTNET_HOST_PATH)&quot; &quot;$(OutputPath)cspropgen_double_x64d.dll&quot; -p &quot;$(OutputPath)$(AssemblyName).dll&quot; -data_path ../data/ -r &quot;@(ReferencePath)&quot;" Condition="'$(Configuration)'=='Debug' And $(SkipPostBuild)=='false'" />
-		<Exec Command="&quot;$(DOTNET_HOST_PATH)&quot; &quot;$(OutputPath)cspropgen_double_x64.dll&quot; -p &quot;$(OutputPath)$(AssemblyName).dll&quot; -data_path ../data/ -r &quot;@(ReferencePath)&quot;" Condition="'$(Configuration)'=='Release' And $(SkipPostBuild)=='false'" />
+		<Exec Command="&quot;$(DOTNET_HOST_PATH)&quot; &quot;$(OutputPath)cspropgen_x64d.dll&quot; -p &quot;$(OutputPath)$(AssemblyName).dll&quot; -data_path ../data/ -r &quot;@(ReferencePath)&quot;" Condition="'$(Configuration)'=='Debug' And $(SkipPostBuild)=='false'" />
+		<Exec Command="&quot;$(DOTNET_HOST_PATH)&quot; &quot;$(OutputPath)cspropgen_x64.dll&quot; -p &quot;$(OutputPath)$(AssemblyName).dll&quot; -data_path ../data/ -r &quot;@(ReferencePath)&quot;" Condition="'$(Configuration)'=='Release' And $(SkipPostBuild)=='false'" />
+		<Exec Command="&quot;$(DOTNET_HOST_PATH)&quot; &quot;$(OutputPath)cspropgen_double_x64d.dll&quot; -p &quot;$(OutputPath)$(AssemblyName).dll&quot; -data_path ../data/ -r &quot;@(ReferencePath)&quot;" Condition="'$(Configuration)'=='Debug-Double' And $(SkipPostBuild)=='false'" />
+		<Exec Command="&quot;$(DOTNET_HOST_PATH)&quot; &quot;$(OutputPath)cspropgen_double_x64.dll&quot; -p &quot;$(OutputPath)$(AssemblyName).dll&quot; -data_path ../data/ -r &quot;@(ReferencePath)&quot;" Condition="'$(Configuration)'=='Release-Double' And $(SkipPostBuild)=='false'" />
 	</Target>
 </Project>
