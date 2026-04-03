@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>48c1f3ef2acc3c336ba2f4799b3be07756870d41</guid>
+	<type>component</type>
+	<hash>f4056523da1345d231e267d122052eecd4575a35c17dd51cc80f417cb9c26498</hash>
+	<runtimes>
+		<runtime id="48c1f3ef2acc3c336ba2f4799b3be07756870d41" name="GameManager.cs" link="0"/>
+		<runtime id="d14797cfac73a913ed519b59c0fb558a82957021" name="GameManager.prop" link="1" type="4"/>
+	</runtimes>
+</asset>

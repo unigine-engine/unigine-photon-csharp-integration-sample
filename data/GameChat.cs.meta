@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>360e0c88987b93ba22598626f1844542db4a3da0</guid>
+	<type>component</type>
+	<hash>2dafe1c1674d63d9684206256b53799e8a4a7c575f9c870f99a7cc6d34aa2ae6</hash>
+	<runtimes>
+		<runtime id="360e0c88987b93ba22598626f1844542db4a3da0" name="GameChat.cs" link="0"/>
+		<runtime id="349ddd47a33c6bccba77f5911165c73a7e4e6559" name="GameChat.prop" link="1" type="4"/>
+	</runtimes>
+</asset>

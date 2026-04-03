@@ -54,19 +54,5 @@ namespace UnigineApp
 
 			return true;
 		}
-
-		public override bool Save(Stream stream)
-		{
-			// Write here code to be called when the world is saving its state (i.e. state_save is called): save custom user data to a file.
-
-			return true;
-		}
-
-		public override bool Restore(Stream stream)
-		{
-			// Write here code to be called when the world is restoring its state (i.e. state_restore is called): restore custom user data to a file here.
-
-			return true;
-		}
 	}
 }

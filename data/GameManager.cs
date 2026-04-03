@@ -14,8 +14,7 @@ using static Unigine.Console;
 using Photon.Realtime;
 using System.Collections;
 
-[Component(PropertyGuid = "6d7b166e41c003c9da8d447ba9e554d6f8618c9e")]
-public class GameManager : Component, IInRoomCallbacks
+public partial class GameManager : Component, IInRoomCallbacks
 {
 	private UnigineApp.AppSystemLogic network_logic = null;
 	private Dictionary<int, UnigineApp.GamePlayer> players = new Dictionary<int, UnigineApp.GamePlayer>();

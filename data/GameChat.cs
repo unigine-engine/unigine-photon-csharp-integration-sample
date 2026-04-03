@@ -15,8 +15,7 @@ using ExitGames.Client.Photon;
 using System.Linq;
 using System;
 
-[Component(PropertyGuid = "3ec7eb7c96315bfc1f6237e5b00c043cd6b6f6aa")]
-public class GameChat : Component, IChatClientListener
+public partial class GameChat : Component, IChatClientListener
 {
 	ChatClient chat_client = null;
 
