@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<world version="2.21.0.0">
+<world version="2.22.0.0">
 	<sound>
 		<sound_manager_load_samples>0</sound_manager_load_samples>
 		<sound_manager_sample_static_memory>64</sound_manager_sample_static_memory>

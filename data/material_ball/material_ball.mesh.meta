@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>a3fbaa7a8db775f674c1b32e8e5e4dbfe7bafba5</guid>
 	<type>mesh</type>
-	<hash>e8f32626</hash>
+	<hash>29f6b816753af63280452c48578f7a39e4c22c3dc80af9cb76946734a3a05f89</hash>
 	<runtimes>
 		<runtime id="a3fbaa7a8db775f674c1b32e8e5e4dbfe7bafba5" name="material_ball.mesh" link="0" type="1"/>
 	</runtimes>

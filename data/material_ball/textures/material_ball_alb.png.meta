@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>a4ef055b5e977afe67ef6645e313a2e07f3378bf</guid>
 	<type>texture</type>
-	<hash>9914d344</hash>
+	<hash>e1e24cf14fb7673f8a71cd5458a485b79825251d6541cdb0f7be4709437fea48</hash>
 	<runtimes>
 		<runtime id="fecf2f1252778349dcf0b414f25c1063d34e3a66" name="material_ball_alb.png" link="0" type="6"/>
 	</runtimes>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>8915d9e7ebf4fb218bb207e6f12a42db5f7c907a</guid>
+	<type>component</type>
+	<hash>493b378073f297551b4af3f05cf2181804830d003f321f385cdfd80ab5f99dfa</hash>
+	<runtimes>
+		<runtime id="8915d9e7ebf4fb218bb207e6f12a42db5f7c907a" name="Utils.cs" link="0"/>
+		<runtime id="b972177f5d6c92328222861e7af20a46528e8f32" name="Utils.prop" link="1" type="4"/>
+	</runtimes>
+</asset>

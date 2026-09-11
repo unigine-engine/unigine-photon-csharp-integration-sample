@@ -37,7 +37,7 @@ This gives a solid foundation for for building your own UNIGINE-based multiplaye
 
 3. **Add the sample project to SDK Browser**:
    - Go to the *My Projects* tab.
-   - Click *Add Existing*, select the `.project` file from the cloned folder (matching your OS - `*-win-*`/`*-lin-*`, edition, precision), and click *Import Project*.
+   - Click *Add Existing*, select the `.project` file from the cloned folder (matching your OS - `*_win_*`/`*_lin_*`, edition, precision), and click *Import Project*.
 
      ![Add Project](https://documentation-api.unigine.com/en/docs/latest/sdk/api_samples/third_party/photon/add_project.png)
 

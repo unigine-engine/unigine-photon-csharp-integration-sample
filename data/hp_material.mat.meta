@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>7920d7f005ffc2d59448a50cc0aba4a7fcaedd68</guid>
+	<type>material</type>
+	<hash>9890d7056e1530f525bbaaa7f34d16db9eec55d513cb7aeb1381052d53679599</hash>
+	<runtimes>
+		<runtime id="7920d7f005ffc2d59448a50cc0aba4a7fcaedd68" name="hp_material" link="0" type="5"/>
+	</runtimes>
+</asset>

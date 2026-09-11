@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
+		<!-- Multi-sample repo fallback: use the per-sample bin restored by SDK Browser
+		     (Repair) if present; otherwise the shared SDK bin at the repository root
+		     (two levels up). SDK Browser users are unaffected. -->
+		<UnigineBin Condition="Exists('$(MSBuildProjectDirectory)/bin/UnigineSharp_x64.dll') or Exists('$(MSBuildProjectDirectory)/bin/UnigineSharp_double_x64.dll')">bin</UnigineBin>
+		<UnigineBin Condition="'$(UnigineBin)' == ''">$(MSBuildProjectDirectory)/../../bin</UnigineBin>
+		<!-- Photon C# dependency: use the copy under source/PhotonSDK if populated
+		     (per README); otherwise fall back to the shared 3rdparty tree via the
+		     UNIGINE_3RDPARTY_DIR environment variable (same source FindPhoton.cmake
+		     uses for C++). -->
+		<PhotonCSharpRoot Condition="Exists('$(MSBuildProjectDirectory)/source/PhotonSDK/PhotonChatApi')">$(MSBuildProjectDirectory)/source/PhotonSDK</PhotonCSharpRoot>
+		<PhotonCSharpRoot Condition="'$(PhotonCSharpRoot)' == ''">$(UNIGINE_3RDPARTY_DIR)/Photon/CSharp/v4.1.6.24</PhotonCSharpRoot>
+		<PhotonNetStandardDll Condition="Exists('$(UnigineBin)/Photon-NetStandard.dll')">$(UnigineBin)/Photon-NetStandard.dll</PhotonNetStandardDll>
+		<PhotonNetStandardDll Condition="'$(PhotonNetStandardDll)' == ''">$(PhotonCSharpRoot)/libs/Release/netstandard2.0/Photon-NetStandard.dll</PhotonNetStandardDll>
 		<OutputType>Exe</OutputType>
 		<TargetFramework>net8.0</TargetFramework>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -13,7 +26,7 @@
 		<RootNamespace>UnigineApp</RootNamespace>
 		<StartupObject>UnigineApp.UnigineApp</StartupObject>
 		<WarningLevel>4</WarningLevel>
-		<OutputPath>bin</OutputPath>
+		<OutputPath>$(UnigineBin)</OutputPath>
 		<UseAppHost>true</UseAppHost>
 		<AppHostSourcePath Condition="'$(OS)' == 'Windows_NT'">$(OutputPath)\dotnet_host_x64.exe</AppHostSourcePath>
 		<EnableDefaultItems>false</EnableDefaultItems>
@@ -31,10 +44,10 @@
 	<ItemGroup Condition="'$(Configuration)'=='Debug'">
 		<Reference Include="UnigineSharp_x64d">
 			<SpecificVersion>false</SpecificVersion>
-			<HintPath>bin\UnigineSharp_x64d.dll</HintPath>
+			<HintPath>$(UnigineBin)\UnigineSharp_x64d.dll</HintPath>
 		</Reference>
-		<Analyzer Include="bin\UnigineCSPropertyBinder_x64d.dll"/>
-		<UnigineSharpLibPath Include="bin\UnigineSharp_x64d.dll"/>
+		<Analyzer Include="$(UnigineBin)\UnigineCSPropertyBinder_x64d.dll"/>
+		<UnigineSharpLibPath Include="$(UnigineBin)\UnigineSharp_x64d.dll"/>
 	</ItemGroup>
 	<PropertyGroup Condition="'$(Configuration)'=='Debug-Double'">
 		<AssemblyName>unigine-photon-csharp-integration-sample_x64d</AssemblyName>
@@ -45,10 +58,10 @@
 	<ItemGroup Condition="'$(Configuration)'=='Debug-Double'">
 		<Reference Include="UnigineSharp_double_x64d">
 			<SpecificVersion>false</SpecificVersion>
-			<HintPath>bin\UnigineSharp_double_x64d.dll</HintPath>
+			<HintPath>$(UnigineBin)\UnigineSharp_double_x64d.dll</HintPath>
 		</Reference>
-		<Analyzer Include="bin\UnigineCSPropertyBinder_double_x64d.dll"/>
-		<UnigineSharpLibPath Include="bin\UnigineSharp_double_x64d.dll"/>
+		<Analyzer Include="$(UnigineBin)\UnigineCSPropertyBinder_double_x64d.dll"/>
+		<UnigineSharpLibPath Include="$(UnigineBin)\UnigineSharp_double_x64d.dll"/>
 	</ItemGroup>
 	<PropertyGroup Condition="'$(Configuration)'=='Release'">
 		<AssemblyName>unigine-photon-csharp-integration-sample_x64</AssemblyName>
@@ -58,10 +71,10 @@
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
 		<Reference Include="UnigineSharp_x64">
 			<SpecificVersion>false</SpecificVersion>
-			<HintPath>bin\UnigineSharp_x64.dll</HintPath>
+			<HintPath>$(UnigineBin)\UnigineSharp_x64.dll</HintPath>
 		</Reference>
-		<Analyzer Include="bin\UnigineCSPropertyBinder_x64.dll"/>
-		<UnigineSharpLibPath Include="bin\UnigineSharp_x64.dll"/>
+		<Analyzer Include="$(UnigineBin)\UnigineCSPropertyBinder_x64.dll"/>
+		<UnigineSharpLibPath Include="$(UnigineBin)\UnigineSharp_x64.dll"/>
 	</ItemGroup>
 	<PropertyGroup Condition="'$(Configuration)'=='Release-Double'">
 		<AssemblyName>unigine-photon-csharp-integration-sample_x64</AssemblyName>
@@ -71,11 +84,16 @@
 	<ItemGroup Condition="'$(Configuration)'=='Release-Double'">
 		<Reference Include="UnigineSharp_double_x64">
 			<SpecificVersion>false</SpecificVersion>
-			<HintPath>bin\UnigineSharp_double_x64.dll</HintPath>
+			<HintPath>$(UnigineBin)\UnigineSharp_double_x64.dll</HintPath>
 		</Reference>
-		<Analyzer Include="bin\UnigineCSPropertyBinder_double_x64.dll"/>
-		<UnigineSharpLibPath Include="bin\UnigineSharp_double_x64.dll"/>
+		<Analyzer Include="$(UnigineBin)\UnigineCSPropertyBinder_double_x64.dll"/>
+		<UnigineSharpLibPath Include="$(UnigineBin)\UnigineSharp_double_x64.dll"/>
 	</ItemGroup>
+	<!-- Double-precision builds get a _double infix, matching the engine libs
+	     (Unigine_double_x64) and the commit-apps naming convention. -->
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug-Double' or '$(Configuration)' == 'Release-Double'">
+		<AssemblyName>$(AssemblyName.Replace('_x64', '_double_x64'))</AssemblyName>
+	</PropertyGroup>
 	<ItemGroup>
 		<Compile Include="data\GameChat.cs" />
 		<AdditionalFiles Include="data/GameChat.cs.meta" Visible="false"/>
@@ -90,12 +108,12 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Reference Include="Photon-NetStandard">
-			<HintPath>bin\Photon-NetStandard.dll</HintPath>
+			<HintPath>$(PhotonNetStandardDll)</HintPath>
 		</Reference>
 	</ItemGroup>
 	<ItemGroup>
-		<Compile Include="source\PhotonSDK\PhotonChatApi\*.cs" />
-		<Compile Include="source\PhotonSDK\PhotonLoadbalancingApi\*.cs" />
+		<Compile Include="$(PhotonCSharpRoot)\PhotonChatApi\*.cs" />
+		<Compile Include="$(PhotonCSharpRoot)\PhotonLoadbalancingApi\*.cs" />
 	</ItemGroup>
 	<Target Name="UnigineVersionDefines" BeforeTargets="CoreCompile" Condition="&apos;@(UnigineSharpLibPath)&apos; != &apos;&apos; AND Exists(&apos;@(UnigineSharpLibPath)&apos;)">
 		<GetAssemblyIdentity AssemblyFiles="@(UnigineSharpLibPath)">

@@ -1,0 +1,23 @@
+{
+	"15c9ece50ab3fe01b18822325330522bb43d7c39": "configs/default.user",
+	"2811a7f9b592b10430cd8893f1a474d6713c263d": "material_ball/material_ball_mat.mat",
+	"28ad433b95e134af6145ed006087792167d3d02f": "configs/editor.boot",
+	"360e0c88987b93ba22598626f1844542db4a3da0": "GameChat.cs",
+	"3ac02fc875c310878d1b943add8e9651fa79db7c": "material_ball/textures/material_ball_n.png",
+	"4227c53bb3cc795eb05a9125737a1040525b469f": "material_ball/textures/material_ball_a.png",
+	"48c1f3ef2acc3c336ba2f4799b3be07756870d41": "GameManager.cs",
+	"53dc8ced59f3bdaebbdca0941fffd6005f9cb208": "hp_material.mat",
+	"657ecdbbfc83135a26777f86012da3587b67be0c": "csharp_components.prop",
+	"68840e360345f85e80f7bcaab6455b83e752f371": "material_ball/material_ball.node",
+	"746652196fc2036cd5b4c8905e83947a049df844": "configs/default.controls",
+	"82fb4683e414ba063e30c9ad87291f2886d77867": "material_ball/textures/material_ball_sh.png",
+	"8915d9e7ebf4fb218bb207e6f12a42db5f7c907a": "Utils.cs",
+	"a3fbaa7a8db775f674c1b32e8e5e4dbfe7bafba5": "material_ball/material_ball.mesh",
+	"ace7db7140e9de77f48d7b88873333f5a52761bc": ".editor2/sandworm/urls.json",
+	"b2452a4f666a5eadb78d9faea5f92d833bba3fc2": "configs/default.global",
+	"b37e3a9fae40740e64ab56b4b7a645a0a803a6d3": "configs/default.config",
+	"b87c06bd52784aa84ecb67ea7c810369d33ce591": "room_world.world",
+	"d6fd2f536104f7cb8106d9f8f967419be91b2dc7": "menu_world.world",
+	"efe4c93f1485ef8964bf8247346988c35a2e0482": "application_params.json",
+	"fecf2f1252778349dcf0b414f25c1063d34e3a66": "material_ball/textures/material_ball_alb.png"
+}

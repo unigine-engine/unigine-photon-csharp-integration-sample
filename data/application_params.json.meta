@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>efe4c93f1485ef8964bf8247346988c35a2e0482</guid>
 	<type>file</type>
-	<hash>6bb2750e</hash>
+	<hash>e4442510378cea4fc503771159453f9c20fde9b2d63e6b639426d5410881ceb4</hash>
 	<runtimes>
 		<runtime id="efe4c93f1485ef8964bf8247346988c35a2e0482" name="application_params.json" link="0"/>
 	</runtimes>
