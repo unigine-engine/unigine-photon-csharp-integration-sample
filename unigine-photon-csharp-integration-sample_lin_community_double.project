@@ -4,7 +4,7 @@
         "debug": false,
         "microprofile_enabled": false
     },
-    "id": "2d99715c-d2f0-4ddf-82a7-46e3e0796eae",
+    "id": "7f1147e7-491f-4426-8df5-5448fa70fece",
     "project_settings": {
         "addons": [],
         "ai_docs": false,
@@ -21,7 +21,7 @@
         "engine_plugin_vendor": "",
         "launcher_console": true,
         "launcher_gui": false,
-        "name": "unigine-photon-csharp-integration-sample_lin_community_double",
+        "name": "unigine-photon-csharp-integration-sample",
         "plugin_name": "",
         "plugin_vendor": "",
         "plugins": [
@@ -40,9 +40,9 @@
         "samples_pack": "",
         "starting_world": "default",
         "sw_distributed": false,
-        "template_id": "template_empty_csharp2.22.0_1cross",
+        "template_id": "template_empty_csharp2.22.0_2cross",
         "template_name": "empty_csharp",
-        "template_version": "2.22.0_1"
+        "template_version": "2.22.0_2"
     },
     "run_settings": {
         "app_name": "",
